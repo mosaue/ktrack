@@ -1,4 +1,4 @@
-package com.ktrack.morti.ktrack.Activities;
+package com.ktrack.morti.ktrack.activities;
 
 import android.app.Activity;
 import android.view.View;

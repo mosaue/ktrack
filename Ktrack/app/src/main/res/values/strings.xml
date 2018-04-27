@@ -1,13 +1,18 @@
 <resources>
     <string name="app_name">Ktrack</string>
     <string name="action_settings">Settings</string>
+    <string name="add_contact">Add contact</string>
+    <string name="choose_mainContact">Choose main contact</string>
     <string name="START">START</string>
     <string name="STOP">STOP</string>
+    <string name="ADD">ADD</string>
     <string name="intervalNotChosen">Interval (min)</string>
     <string name="intervalSelected">You are updating your position every %1$s minutes.</string>
     <string name="phoneNumberSelected">Tracking is sent to %1$s.</string>
     <string name="baseURL">https://www.google.com/maps/search/?api=1&amp;query=</string>
     <string name="mapButton">MAP</string>
+    <string name="contactPhone">Phone Number</string>
+    <string name="contactName">Name</string>
     <string-array name="intervals_array">
         <item>1</item>
         <item>10</item>

@@ -1,4 +1,4 @@
-package com.ktrack.morti.ktrack.Utils;
+package com.ktrack.morti.ktrack.utils;
 
 public enum MessageContext {
     trackingStart("trackingStart"),

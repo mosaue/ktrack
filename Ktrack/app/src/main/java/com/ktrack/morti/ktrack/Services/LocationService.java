@@ -1,4 +1,4 @@
-package com.ktrack.morti.ktrack.Services;
+package com.ktrack.morti.ktrack.services;
 
 import android.app.Service;
 import android.content.Context;
@@ -9,11 +9,11 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.ktrack.morti.ktrack.Utils.LocationServiceGlobals;
-import com.ktrack.morti.ktrack.Utils.MessageContext;
+import com.ktrack.morti.ktrack.utils.LocationServiceGlobals;
+import com.ktrack.morti.ktrack.utils.MessageContext;
 
-import static com.ktrack.morti.ktrack.Activities.MainScreen.intervalKey;
-import static com.ktrack.morti.ktrack.Activities.MainScreen.phoneKey;
+import static com.ktrack.morti.ktrack.activities.MainScreen.intervalKey;
+import static com.ktrack.morti.ktrack.activities.MainScreen.phoneKey;
 import static java.lang.Thread.sleep;
 
 public class LocationService extends Service

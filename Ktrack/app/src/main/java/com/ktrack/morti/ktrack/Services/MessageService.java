@@ -1,16 +1,16 @@
-package com.ktrack.morti.ktrack.Services;
+package com.ktrack.morti.ktrack.services;
 
 import android.app.IntentService;
 import android.content.Intent;
 import android.telephony.SmsManager;
 import android.util.Log;
 
-import static com.ktrack.morti.ktrack.Services.LocationService.extraMessage;
-import static com.ktrack.morti.ktrack.Services.LocationService.latitudeKey;
-import static com.ktrack.morti.ktrack.Services.LocationService.latitudeKeyNP;
-import static com.ktrack.morti.ktrack.Services.LocationService.longitudeKey;
-import static com.ktrack.morti.ktrack.Services.LocationService.longitudeKeyNP;
-import static com.ktrack.morti.ktrack.Activities.MainScreen.phoneKey;
+import static com.ktrack.morti.ktrack.services.LocationService.extraMessage;
+import static com.ktrack.morti.ktrack.services.LocationService.latitudeKey;
+import static com.ktrack.morti.ktrack.services.LocationService.latitudeKeyNP;
+import static com.ktrack.morti.ktrack.services.LocationService.longitudeKey;
+import static com.ktrack.morti.ktrack.services.LocationService.longitudeKeyNP;
+import static com.ktrack.morti.ktrack.activities.MainScreen.phoneKey;
 
 public class MessageService extends IntentService {
     private static final String TAG = "MESSAGESERVICE";
