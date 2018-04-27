@@ -30,14 +30,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="750">
-      <file leaf-file-name="MainScreen.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainScreen.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/MainScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="50" column="32" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="32" />
+            <state relative-caret-position="491">
+              <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
               <folding>
                 <element signature="e#2181#2199#0" expanded="true" />
-                <element signature="e#2230#2244#0" expanded="true" />
                 <element signature="e#2274#2287#0" expanded="true" />
                 <element signature="e#3357#3777#0" expanded="true" />
                 <element signature="e#3776#3777#0" expanded="true" />
@@ -81,14 +80,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_add_contact.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="content_add_contact.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_add_contact.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="53" column="40" lean-forward="true" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+            <state relative-caret-position="-226">
+              <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -2232,11 +2231,6 @@
             <path>
               <item name="Ktrack" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
-            </path>
-            <path>
-              <item name="Ktrack" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
@@ -2251,17 +2245,6 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="ktrack" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="activities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ktrack" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Ktrack" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="Ktrack" type="1abcf292:AndroidViewProjectNode" />
@@ -2519,7 +2502,6 @@
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="e#2181#2199#0" expanded="true" />
-            <element signature="e#2230#2244#0" expanded="true" />
             <element signature="e#2274#2287#0" expanded="true" />
             <element signature="e#3357#3777#0" expanded="true" />
             <element signature="e#3776#3777#0" expanded="true" />
@@ -2598,7 +2580,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#2181#2199#0" expanded="true" />
-            <element signature="e#2230#2244#0" expanded="true" />
             <element signature="e#2274#2287#0" expanded="true" />
             <element signature="e#3357#3777#0" expanded="true" />
             <element signature="e#3776#3777#0" expanded="true" />
@@ -2674,29 +2655,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/MainScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="50" column="32" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="32" />
-          <folding>
-            <element signature="e#2181#2199#0" expanded="true" />
-            <element signature="e#2230#2244#0" expanded="true" />
-            <element signature="e#2274#2287#0" expanded="true" />
-            <element signature="e#3357#3777#0" expanded="true" />
-            <element signature="e#3776#3777#0" expanded="true" />
-            <element signature="e#3818#4059#0" expanded="true" />
-            <element signature="e#4058#4059#0" expanded="true" />
-            <element signature="e#5227#5279#0" expanded="true" />
-            <element signature="e#5593#5644#0" expanded="true" />
-            <element signature="e#5725#5779#0" expanded="true" />
-            <element signature="e#7866#7920#0" expanded="true" />
-            <element signature="e#8024#8075#0" expanded="true" />
-            <element signature="e#9066#9092#0" expanded="true" />
-            <element signature="e#9175#9227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main_screen.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2743,9 +2701,31 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="53" column="40" lean-forward="true" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+        <state relative-caret-position="-226">
+          <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/MainScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+          <folding>
+            <element signature="e#2181#2199#0" expanded="true" />
+            <element signature="e#2274#2287#0" expanded="true" />
+            <element signature="e#3357#3777#0" expanded="true" />
+            <element signature="e#3776#3777#0" expanded="true" />
+            <element signature="e#3818#4059#0" expanded="true" />
+            <element signature="e#4058#4059#0" expanded="true" />
+            <element signature="e#5227#5279#0" expanded="true" />
+            <element signature="e#5593#5644#0" expanded="true" />
+            <element signature="e#5725#5779#0" expanded="true" />
+            <element signature="e#7866#7920#0" expanded="true" />
+            <element signature="e#8024#8075#0" expanded="true" />
+            <element signature="e#9066#9092#0" expanded="true" />
+            <element signature="e#9175#9227#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
