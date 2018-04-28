@@ -32,6 +32,7 @@
         <service android:name=".services.MessageService" />
 
         <activity android:name=".activities.AddContactActivity"></activity>
+        <activity android:name=".activities.EditContactsActivity"></activity>
     </application>
 
 </manifest>

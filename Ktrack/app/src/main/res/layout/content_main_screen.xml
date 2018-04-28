@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="1.0"
         tools:text="Interval (min)" />
 
-    <EditText
+    <TextView
         android:id="@+id/phoneNumberInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="number"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/intervalText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,20 +97,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intervalChooser" />
-
-    <TextView
-        android:id="@+id/phoneText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/phoneNumberInput"
-        app:layout_constraintEnd_toEndOf="@+id/phoneNumberInput"
-        app:layout_constraintStart_toStartOf="@+id/phoneNumberInput"
-        app:layout_constraintTop_toTopOf="@+id/phoneNumberInput" />
 
 </android.support.constraint.ConstraintLayout>
