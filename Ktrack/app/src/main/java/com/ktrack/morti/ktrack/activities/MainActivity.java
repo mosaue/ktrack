@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,15 +42,18 @@ public class MainActivity extends AppCompatActivity{
     String intervalString;
     String contactInformationString;
     Integer toolbarVisibility;
+    String intervalChosen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-
-
         mDatabaseHelper = new DatabaseHelper(this);
-        getState();
+        if (savedInstanceState!= null){
+            intervalChosen = savedInstanceState.getString(intervalKey);
+        }else{
+            intervalChosen = "60";
+        }
     }
 
 
@@ -68,48 +73,50 @@ public class MainActivity extends AppCompatActivity{
         final Button mapButton = findViewById(R.id.mapButton);
         final TextView contactInformation = findViewById(R.id.phoneNumberInput);
         final TextView intervalText = findViewById(R.id.intervalText);
-
+        final RadioGroup radioGroup = findViewById(R.id.intervalGroup);
 
         mapButton.setText(R.string.mapButton);
         startButton.setText(R.string.START);
         stopButton.setText(R.string.STOP);
 
-        final Spinner intervalSpinner = findViewById(R.id.intervalChooser);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.intervals_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        intervalSpinner.setAdapter(adapter);
-        intervalSpinner.setOnItemSelectedListener(new SpinnerActivity());
         getState();
+        final RadioButton interval1min = findViewById(R.id.interval1min);
+        final RadioButton interval10min = findViewById(R.id.interval10min);
+        final RadioButton interval30min = findViewById(R.id.interval30min);
+        final RadioButton interval1hour = findViewById(R.id.interval1hour);
+        final RadioButton interval24hour = findViewById(R.id.interval24hour);
+        if (intervalChosen == null) {
+            radioGroup.check(interval1hour.getId());
+        }
+        setChosenInterval(radioGroup,interval1min,interval10min,interval30min,interval1hour,interval24hour);
 
         startButton.setVisibility(startButtonVisibility);
         stopButton.setVisibility(stopButtonVisibility);
         mapButton.setVisibility(stopButtonVisibility);
         intervalText.setText(intervalString);
-        intervalSpinner.setVisibility(startButtonVisibility);
+        radioGroup.setVisibility(startButtonVisibility);
         contactInformation.setText(contactInformationString);
         toolbar.setVisibility(toolbarVisibility);
 
-
         startButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String intervalChosen = intervalSpinner.getSelectedItem().toString();
-                startButtonAction(context,toastDuration,startButton,stopButton,mapButton,intervalSpinner
+                //String intervalChosen = intervalSpinner.getSelectedItem().toString();
+                startButtonAction(context,toastDuration,startButton,stopButton,mapButton,radioGroup
                        ,contactInformation ,intervalText,intervalChosen,toolbar);
             }
         });
         stopButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                stopButtonAction(context,startButton,stopButton,mapButton,intervalSpinner
+                stopButtonAction(context,startButton,stopButton,mapButton,radioGroup
                         ,intervalText,contactInformation,toolbar);
             }
         });
-
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        outState.putString(intervalKey,intervalChosen);
     }
 
     @Override
@@ -142,7 +149,6 @@ public class MainActivity extends AppCompatActivity{
                 toolbarVisibility = View.VISIBLE;
             }
             contactInformationVisibility = View.VISIBLE;
-
         }
     }
 
@@ -174,7 +180,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void startButtonAction(Context context, Integer toastDuration, Button startButton
-        , Button stopButton, Button mapButton, Spinner intervalSpinner, TextView contactInformation
+        , Button stopButton, Button mapButton, RadioGroup radioGroup, TextView contactInformation
         , TextView intervalText, String intervalChosen, Toolbar toolbar){
         if (phoneNumber.length()!=8 && !(phoneNumber.startsWith("0047") && phoneNumber.length()==12)){
             CharSequence text;
@@ -183,7 +189,10 @@ public class MainActivity extends AppCompatActivity{
             toast.show();
         }else{
             if (intervalChosen.equals("")){
-                intervalChosen = "60";
+                CharSequence text;
+                text = "Choose an interval!";
+                Toast toast = Toast.makeText(context, text, toastDuration);
+                toast.show();
             }
             startButtonVisibility = View.INVISIBLE;
             stopButtonVisibility = View.VISIBLE;
@@ -194,7 +203,7 @@ public class MainActivity extends AppCompatActivity{
             mapButton.setVisibility(stopButtonVisibility);
             toolbar.setVisibility(toolbarVisibility);
 
-            intervalSpinner.setVisibility(startButtonVisibility);
+            radioGroup.setVisibility(startButtonVisibility);
             contactInformationString = String.format(getResources().getString(R.string.phoneNumberSelected), contact +", " +  phoneNumber);
             contactInformation.setText(contactInformationString);
             intervalString = String.format(getResources().getString(R.string.intervalSelected), intervalChosen);
@@ -209,7 +218,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void stopButtonAction(Context context, Button startButton, Button stopButton
-            , Button mapButton, Spinner intervalSpinner, TextView intervalText, TextView contactInformation
+            , Button mapButton, RadioGroup radioGroup, TextView intervalText, TextView contactInformation
             , Toolbar toolbar){
         startButtonVisibility = View.VISIBLE;
         stopButtonVisibility = View.INVISIBLE;
@@ -217,7 +226,7 @@ public class MainActivity extends AppCompatActivity{
         startButton.setVisibility(startButtonVisibility);
         stopButton.setVisibility(stopButtonVisibility);
         mapButton.setVisibility(stopButtonVisibility);
-        intervalSpinner.setVisibility(startButtonVisibility);
+        radioGroup.setVisibility(startButtonVisibility);
         toolbar.setVisibility(toolbarVisibility);
         intervalText.setText(R.string.intervalNotChosen);
         intervalString = getResources().getString(R.string.intervalNotChosen);
@@ -241,5 +250,56 @@ public class MainActivity extends AppCompatActivity{
             phoneNumber = data.getString(data.getColumnIndex(COL3));
         }
         data.close();
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.interval1min:
+                if (checked)
+                    intervalChosen = "1";
+                    break;
+            case R.id.interval10min:
+                if (checked)
+                    intervalChosen = "10";
+                    break;
+            case R.id.interval30min:
+                if (checked)
+                    intervalChosen = "30";
+                    break;
+            case R.id.interval1hour:
+                if (checked)
+                    intervalChosen = "60";
+                    break;
+            case R.id.interval24hour:
+                if (checked)
+                    intervalChosen = "1440";
+                    break;
+        }
+    }
+
+    private void setChosenInterval(RadioGroup radioGroup,RadioButton interval1min,RadioButton interval10min
+            ,RadioButton interval30min,RadioButton interval1hour,RadioButton interval24hour) {
+
+        switch (intervalChosen) {
+            case "1":
+                radioGroup.check(interval1min.getId());
+                break;
+            case "10":
+                radioGroup.check(interval10min.getId());
+                break;
+            case "30":
+                radioGroup.check(interval30min.getId());
+                break;
+            case "1440":
+                radioGroup.check(interval24hour.getId());
+                break;
+            default:
+                radioGroup.check(interval1hour.getId());
+                break;
+        }
     }
 }

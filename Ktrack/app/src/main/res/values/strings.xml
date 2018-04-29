@@ -8,7 +8,7 @@
     <string name="START">START</string>
     <string name="STOP">STOP</string>
     <string name="ADD">ADD</string>
-    <string name="intervalNotChosen">Interval (min)</string>
+    <string name="intervalNotChosen">Interval</string>
     <string name="intervalSelected">You are updating your position every %1$s minutes.</string>
     <string name="phoneNumberSelected">Tracking is sent to %1$s.</string>
     <string name="notTracking">Tracking will be sent to %1$s.</string>
@@ -20,6 +20,11 @@
     <string name="noPrimaryContact">Add primary contact to start tracking</string>
     <string name="apply_edit_contacts">APPLY</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="interval1min">1 min</string>
+    <string name="interval10min">10 min</string>
+    <string name="interval30min">30 min</string>
+    <string name="interval1hour">1 hour</string>
+    <string name="interval24hour">1 day</string>
     <string-array name="intervals_array">
         <item>1</item>
         <item>10</item>

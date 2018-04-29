@@ -33,65 +33,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="750">
-      <file leaf-file-name="EditContactActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/EditContactActivity.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_edit_contact.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_edit_contact.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state relative-caret-position="2160">
+              <caret line="79" column="42" lean-forward="true" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
               <folding>
-                <element signature="e#3447#3472#0" expanded="true" />
+                <element signature="e#2615#2633#0" expanded="true" />
+                <element signature="e#2664#2678#0" expanded="true" />
+                <element signature="e#2708#2721#0" expanded="true" />
+                <element signature="e#3760#4124#0" expanded="true" />
+                <element signature="e#4123#4124#0" expanded="true" />
+                <element signature="e#4165#4411#0" expanded="true" />
+                <element signature="e#4410#4411#0" expanded="true" />
+                <element signature="e#4642#4643#0" expanded="true" />
+                <element signature="e#4675#4676#0" expanded="true" />
+                <element signature="e#4881#4932#0" expanded="true" />
+                <element signature="e#5460#5511#0" expanded="true" />
+                <element signature="e#5609#5663#0" expanded="true" />
+                <element signature="e#5935#5981#0" expanded="true" />
+                <element signature="e#6047#6099#0" expanded="true" />
+                <element signature="e#8523#8577#0" expanded="true" />
+                <element signature="e#8719#8770#0" expanded="true" />
+                <element signature="e#9794#9820#0" expanded="true" />
+                <element signature="e#9848#9900#0" expanded="true" />
+                <element signature="e#9997#10043#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main_screen.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_screen.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="20" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_main_screen.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main_screen.xml">
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="1579">
-              <caret line="76" column="38" lean-forward="false" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_edit_contact.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_edit_contact.xml">
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+            <state relative-caret-position="280">
+              <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -114,8 +90,12 @@
       <find>name</find>
       <find>phoneInput.setVisibility</find>
       <find>contactInformation</find>
-      <find>constra</find>
       <find>phoneNumber</find>
+      <find>intervalspinner</find>
+      <find>onSaveInstanceState</find>
+      <find>getState</find>
+      <find>map</find>
+      <find>constra</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2140,7 +2120,6 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main_screen.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main_screen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_add_contact.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_contacts.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/contact_view.xml" />
@@ -2165,20 +2144,21 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/EditContactsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/utils/DatabaseHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_contact.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/contact_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/ContactOverviewActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/EditContactActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/AddContactActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/services/LocationService.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_edit_contact.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_contact.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main_screen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/MainActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-38" />
     <option name="y" value="-22" />
     <option name="width" value="3868" />
@@ -2260,6 +2240,12 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="Ktrack" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="Ktrack" type="1abcf292:AndroidViewProjectNode" />
@@ -2487,10 +2473,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="-16" width="3872" height="2092" extended-state="7" />
+    <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2617,7 +2603,13 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1423#1445#0" expanded="false" />
+            <element signature="e#1688#1711#0" expanded="false" />
+            <element signature="e#1954#1977#0" expanded="false" />
+            <element signature="e#2220#2243#0" expanded="false" />
+            <element signature="e#2487#2511#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2688,6 +2680,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2703,6 +2696,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2742,6 +2736,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2779,18 +2774,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/26.1.0/2b34456c30d6b6e5db5fa3e8fa02f6cebd5531fd/appcompat-v7-26.1.0-sources.jar!/android/support/v7/app/AppCompatActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="571">
           <caret line="127" column="16" lean-forward="false" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2820,13 +2808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2153">
-          <caret line="238" column="33" lean-forward="false" selection-start-line="238" selection-start-column="33" selection-end-line="238" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -2838,6 +2819,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="574">
           <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="e#388#407#0" expanded="false" />
+            <element signature="e#561#582#0" expanded="false" />
+            <element signature="e#605#626#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2863,14 +2849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/ContactOverviewActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="109" column="4" lean-forward="false" selection-start-line="109" selection-start-column="4" selection-end-line="133" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/AddContactActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1068">
@@ -2883,6 +2861,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2903,18 +2882,7 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="20" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main_screen.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1579">
-          <caret line="76" column="38" lean-forward="false" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="20" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -2925,9 +2893,9 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
-          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
-            <element signature="e#3447#3472#0" expanded="true" />
+            <element signature="e#3447#3472#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2935,8 +2903,69 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/EditContactActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="613">
-          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/ContactOverviewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main_screen.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-1200">
+          <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <element signature="e#1423#1445#0" expanded="false" />
+            <element signature="e#1688#1711#0" expanded="false" />
+            <element signature="e#1954#1977#0" expanded="false" />
+            <element signature="e#2220#2243#0" expanded="false" />
+            <element signature="e#2487#2511#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ktrack/morti/ktrack/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="79" column="42" lean-forward="true" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
+          <folding>
+            <element signature="e#2615#2633#0" expanded="true" />
+            <element signature="e#2664#2678#0" expanded="true" />
+            <element signature="e#2708#2721#0" expanded="true" />
+            <element signature="e#3760#4124#0" expanded="true" />
+            <element signature="e#4123#4124#0" expanded="true" />
+            <element signature="e#4165#4411#0" expanded="true" />
+            <element signature="e#4410#4411#0" expanded="true" />
+            <element signature="e#4642#4643#0" expanded="true" />
+            <element signature="e#4675#4676#0" expanded="true" />
+            <element signature="e#4881#4932#0" expanded="true" />
+            <element signature="e#5460#5511#0" expanded="true" />
+            <element signature="e#5609#5663#0" expanded="true" />
+            <element signature="e#5935#5981#0" expanded="true" />
+            <element signature="e#6047#6099#0" expanded="true" />
+            <element signature="e#8523#8577#0" expanded="true" />
+            <element signature="e#8719#8770#0" expanded="true" />
+            <element signature="e#9794#9820#0" expanded="true" />
+            <element signature="e#9848#9900#0" expanded="true" />
+            <element signature="e#9997#10043#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
