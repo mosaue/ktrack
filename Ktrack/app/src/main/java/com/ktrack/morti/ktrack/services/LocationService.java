@@ -12,8 +12,8 @@ import android.util.Log;
 import com.ktrack.morti.ktrack.utils.LocationServiceGlobals;
 import com.ktrack.morti.ktrack.utils.MessageContext;
 
-import static com.ktrack.morti.ktrack.activities.MainScreen.intervalKey;
-import static com.ktrack.morti.ktrack.activities.MainScreen.phoneKey;
+import static com.ktrack.morti.ktrack.activities.MainActivity.intervalKey;
+import static com.ktrack.morti.ktrack.activities.MainActivity.phoneKey;
 import static java.lang.Thread.sleep;
 
 public class LocationService extends Service
@@ -168,6 +168,12 @@ public class LocationService extends Service
                 }
             }
         }
+    }
+
+    @Override
+    public void onTaskRemoved(Intent rootIntent) {
+        super.onTaskRemoved(rootIntent);
+        Log.i(TAG, "onTaskRemoved()");
     }
 
     private void initializeLocationManager() {

@@ -10,7 +10,7 @@ import static com.ktrack.morti.ktrack.services.LocationService.latitudeKey;
 import static com.ktrack.morti.ktrack.services.LocationService.latitudeKeyNP;
 import static com.ktrack.morti.ktrack.services.LocationService.longitudeKey;
 import static com.ktrack.morti.ktrack.services.LocationService.longitudeKeyNP;
-import static com.ktrack.morti.ktrack.activities.MainScreen.phoneKey;
+import static com.ktrack.morti.ktrack.activities.MainActivity.phoneKey;
 
 public class MessageService extends IntentService {
     private static final String TAG = "MESSAGESERVICE";

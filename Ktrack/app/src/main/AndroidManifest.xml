@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MainScreen"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -32,7 +32,8 @@
         <service android:name=".services.MessageService" />
 
         <activity android:name=".activities.AddContactActivity"></activity>
-        <activity android:name=".activities.EditContactsActivity"></activity>
+        <activity android:name=".activities.EditContactActivity"></activity>
+        <activity android:name=".activities.ContactOverviewActivity"></activity>
     </application>
 
 </manifest>

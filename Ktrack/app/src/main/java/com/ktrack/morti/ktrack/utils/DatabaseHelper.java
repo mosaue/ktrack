@@ -18,11 +18,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "DatabaseHelper";
 
-    private static final String TABLE_NAME = "ktrack_contacts";
+    private static final String TABLE_NAME = "KTRACK_STORED_CONTACTS";
     private static final String COL1 = "ID";
-    private static final String COL2 = "name";
-    private static final String COL3 = "phone";
-    private static final String COL4 = "mainContact";
+    public static final String COL2 = "contactName";
+    public static final String COL3 = "conttactPhone";
+    public static final String COL4 = "mainContact";
 
 
 
@@ -69,6 +69,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void editData(String oldName, String newName,String oldPhone, String newPhone, String mainContact) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "UPDATE " + TABLE_NAME + " SET \n"
+                + COL2 + " = '" + newName + "', \n"
+                + COL3 + " = '" + newPhone + "', \n"
+                + COL4 + " = '" + mainContact + "' \n"
+                + "WHERE "
+                + COL2 + " = '" + oldName + "' AND "
+                + COL3 + " = '" + oldPhone + "'";
+        db.execSQL(query);
+    }
+
     /**
      * Returns all the data from database
      * @return
@@ -91,16 +104,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query = "SELECT " + COL2 + " FROM " + TABLE_NAME +
                 " WHERE " + COL2 + " = '" + name + "'";
         Cursor data = db.rawQuery(query, null);
-        ArrayList<String> listData = new ArrayList<>();
+        String returnName = "";
         while(data.moveToNext()){
-            listData.add(data.getString(1));
-            Log.e(TAG,data.getString(1));
-        }
-        if (listData.size()<1){
-            return false;
+            returnName = data.getString(data.getColumnIndex(COL2));
         }
         data.close();
-        return true;
+        if (name.equals(returnName)){
+            return true;
+        }
+        return false;
     }
 
     public boolean primaryContactExists(){
@@ -108,16 +120,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query = "SELECT *" + " FROM " + TABLE_NAME +
                 " WHERE " + COL4 + " = 'Y'";
         Cursor data = db.rawQuery(query, null);
-        ArrayList<String> listData = new ArrayList<>();
+        String returnName = "";
         while(data.moveToNext()){
-            listData.add(data.getString(1));
-            Log.e(TAG,data.getString(1));
-        }
-        if (listData.size()<1){
-            return false;
+            returnName = data.getString(data.getColumnIndex(COL2));
         }
         data.close();
-        return true;
+        return !returnName.equals("");
     }
 
     public void endPrimary(){

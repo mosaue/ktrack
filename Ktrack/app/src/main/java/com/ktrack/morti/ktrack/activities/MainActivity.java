@@ -22,7 +22,10 @@ import com.ktrack.morti.ktrack.R;
 
 import java.util.ArrayList;
 
-public class MainScreen extends AppCompatActivity{
+import static com.ktrack.morti.ktrack.utils.DatabaseHelper.COL2;
+import static com.ktrack.morti.ktrack.utils.DatabaseHelper.COL3;
+
+public class MainActivity extends AppCompatActivity{
     private static final String TAG = "MAINACTIVITY";
     public static final String phoneKey = "phoneKey";
     public static final String intervalKey = "intervalKey";
@@ -33,15 +36,16 @@ public class MainScreen extends AppCompatActivity{
     Integer stopButtonVisibility;
     Integer contactInformationVisibility;
     String phoneNumber;
+    String contact;
     String intervalString;
     String contactInformationString;
+    Integer toolbarVisibility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         mDatabaseHelper = new DatabaseHelper(this);
         getState();
@@ -53,6 +57,9 @@ public class MainScreen extends AppCompatActivity{
         super.onResume();
         final Context context = getApplicationContext();
         final Integer toastDuration = Toast.LENGTH_SHORT;
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         mDatabaseHelper = new DatabaseHelper(this);
 
@@ -81,19 +88,20 @@ public class MainScreen extends AppCompatActivity{
         intervalText.setText(intervalString);
         intervalSpinner.setVisibility(startButtonVisibility);
         contactInformation.setText(contactInformationString);
+        toolbar.setVisibility(toolbarVisibility);
 
 
         startButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String intervalChosen = intervalSpinner.getSelectedItem().toString();
                 startButtonAction(context,toastDuration,startButton,stopButton,mapButton,intervalSpinner
-                       ,contactInformation ,intervalText,intervalChosen);
+                       ,contactInformation ,intervalText,intervalChosen,toolbar);
             }
         });
         stopButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 stopButtonAction(context,startButton,stopButton,mapButton,intervalSpinner
-                        ,intervalText,contactInformation);
+                        ,intervalText,contactInformation,toolbar);
             }
         });
 
@@ -116,6 +124,7 @@ public class MainScreen extends AppCompatActivity{
             intervalString = getResources().getString(R.string.noPrimaryContact);
             contactInformationVisibility = View.INVISIBLE;
             contactInformationString = "";
+            toolbarVisibility = View.VISIBLE;
         }else{
             getPrimaryContactDetails();
             LocationServiceGlobals locationServiceGlobals = LocationServiceGlobals.getInstance();
@@ -123,12 +132,14 @@ public class MainScreen extends AppCompatActivity{
                 startButtonVisibility = View.INVISIBLE;
                 stopButtonVisibility = View.VISIBLE;
                 intervalString = String.format(getResources().getString(R.string.intervalSelected), locationServiceGlobals.getInterval());
-                contactInformationString = String.format(getResources().getString(R.string.phoneNumberSelected), locationServiceGlobals.getPhoneNumber());
+                contactInformationString = String.format(getResources().getString(R.string.phoneNumberSelected), contact +", " +  phoneNumber);
+                toolbarVisibility = View.INVISIBLE;
             } else {
                 startButtonVisibility = View.VISIBLE;
                 stopButtonVisibility = View.INVISIBLE;
-                contactInformationString = String.format(getResources().getString(R.string.notTracking), phoneNumber);
+                contactInformationString = String.format(getResources().getString(R.string.notTracking), contact +", " +  phoneNumber);
                 intervalString = getResources().getString(R.string.intervalNotChosen);
+                toolbarVisibility = View.VISIBLE;
             }
             contactInformationVisibility = View.VISIBLE;
 
@@ -154,6 +165,8 @@ public class MainScreen extends AppCompatActivity{
             Intent intent = new Intent(this, AddContactActivity.class);
             startActivity(intent);
         }else if (id == R.id.edit_contacts_menu){
+            Intent intent = new Intent(this, ContactOverviewActivity.class);
+            startActivity(intent);
 
         }
 
@@ -162,7 +175,7 @@ public class MainScreen extends AppCompatActivity{
 
     private void startButtonAction(Context context, Integer toastDuration, Button startButton
         , Button stopButton, Button mapButton, Spinner intervalSpinner, TextView contactInformation
-        , TextView intervalText, String intervalChosen){
+        , TextView intervalText, String intervalChosen, Toolbar toolbar){
         if (phoneNumber.length()!=8 && !(phoneNumber.startsWith("0047") && phoneNumber.length()==12)){
             CharSequence text;
             text = "Enter a phone number!";
@@ -174,12 +187,15 @@ public class MainScreen extends AppCompatActivity{
             }
             startButtonVisibility = View.INVISIBLE;
             stopButtonVisibility = View.VISIBLE;
+            toolbarVisibility = View.INVISIBLE;
 
             startButton.setVisibility(startButtonVisibility);
             stopButton.setVisibility(stopButtonVisibility);
             mapButton.setVisibility(stopButtonVisibility);
+            toolbar.setVisibility(toolbarVisibility);
+
             intervalSpinner.setVisibility(startButtonVisibility);
-            contactInformationString = String.format(getResources().getString(R.string.phoneNumberSelected), phoneNumber);
+            contactInformationString = String.format(getResources().getString(R.string.phoneNumberSelected), contact +", " +  phoneNumber);
             contactInformation.setText(contactInformationString);
             intervalString = String.format(getResources().getString(R.string.intervalSelected), intervalChosen);
             intervalText.setText(intervalString);
@@ -193,17 +209,20 @@ public class MainScreen extends AppCompatActivity{
     }
 
     private void stopButtonAction(Context context, Button startButton, Button stopButton
-            , Button mapButton, Spinner intervalSpinner, TextView intervalText, TextView contactInformation){
+            , Button mapButton, Spinner intervalSpinner, TextView intervalText, TextView contactInformation
+            , Toolbar toolbar){
         startButtonVisibility = View.VISIBLE;
         stopButtonVisibility = View.INVISIBLE;
+        toolbarVisibility = View.VISIBLE;
         startButton.setVisibility(startButtonVisibility);
         stopButton.setVisibility(stopButtonVisibility);
         mapButton.setVisibility(stopButtonVisibility);
         intervalSpinner.setVisibility(startButtonVisibility);
+        toolbar.setVisibility(toolbarVisibility);
         intervalText.setText(R.string.intervalNotChosen);
         intervalString = getResources().getString(R.string.intervalNotChosen);
         intervalText.setText(intervalString);
-        contactInformationString = String.format(getResources().getString(R.string.notTracking), phoneNumber);
+        contactInformationString = String.format(getResources().getString(R.string.notTracking), contact +", " +  phoneNumber);
         contactInformation.setText(contactInformationString);
         stopService(new Intent(context,LocationService.class));
     }
@@ -216,12 +235,11 @@ public class MainScreen extends AppCompatActivity{
 
     private void getPrimaryContactDetails(){
         Cursor data = mDatabaseHelper.getPrimaryContact();
-        ArrayList<String> listData = new ArrayList<>();
+
         while(data.moveToNext()){
-            listData.add(data.getString(2));
+            contact = data.getString(data.getColumnIndex(COL2));
+            phoneNumber = data.getString(data.getColumnIndex(COL3));
         }
-        phoneNumber = listData.get(0);
-        Log.d(TAG,phoneNumber);
-        //TODO: retrieve the whole user object
+        data.close();
     }
 }

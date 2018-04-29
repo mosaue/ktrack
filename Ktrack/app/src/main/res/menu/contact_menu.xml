@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.ktrack.morti.ktrack.activities.MainActivity">
     <item
-        android:id="@+id/add_contact_menu"
+        android:id="@+id/main_menu"
+        android:orderInCategory="100"
+        android:name="@string/main_menu"
+        android:title="@string/main_menu"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/add_contact_menu_edit"
         android:orderInCategory="100"
         android:name="@string/add_contact"
         android:title="@string/add_contact"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/edit_contacts_menu"
-        android:orderInCategory="100"
-        android:name="@string/edit_contacts"
-        android:title="@string/edit_contacts"
         app:showAsAction="never" />
 </menu>

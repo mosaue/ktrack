@@ -2,8 +2,8 @@ package com.ktrack.morti.ktrack.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,35 +17,51 @@ import android.widget.Toast;
 import com.ktrack.morti.ktrack.R;
 import com.ktrack.morti.ktrack.utils.DatabaseHelper;
 
-public class AddContactActivity extends AppCompatActivity {
+import static com.ktrack.morti.ktrack.activities.ContactOverviewActivity.nameKey;
+import static com.ktrack.morti.ktrack.activities.ContactOverviewActivity.phoneKey;
+import static com.ktrack.morti.ktrack.activities.ContactOverviewActivity.primaryKey;
+
+public class EditContactActivity extends AppCompatActivity {
     private static final String TAG = "AccContact";
     DatabaseHelper mDatabaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_contact);
+        setContentView(R.layout.activity_edit_contact);
         final Context context = getApplicationContext();
+        Intent intent = getIntent();
+        final String contactName = intent.getStringExtra(nameKey);
+        final String contactPhone = intent.getStringExtra(phoneKey);
+        String contactPrimary = intent.getStringExtra(primaryKey);
 
-        final Button addButton = findViewById(R.id.add_contact);
-        final EditText newContactName = findViewById(R.id.nameInput);
-        final EditText newContactNumber = findViewById(R.id.newPhoneNumber);
-        final TextView addContactHeader = findViewById(R.id.addContactHeader);
-        final CheckBox primaryContact = findViewById(R.id.primaryContact);
+        final Button addButton = findViewById(R.id.editContact);
+        final TextView addContactHeader = findViewById(R.id.editContactHeader);
 
-        addContactHeader.setText(getResources().getString(R.string.add_contact));
-        addButton.setText(getResources().getString(R.string.ADD));
+        final EditText newContactName = findViewById(R.id.editName);
+        final EditText newContactNumber = findViewById(R.id.editPhoneNumber);
+        final CheckBox primaryContact = findViewById(R.id.editPrimaryContact);
+        newContactName.setText(contactName);
+        newContactNumber.setText(contactPhone);
+        if (contactPrimary.equals("Y")){
+            primaryContact.setChecked(true);
+        }
+        addContactHeader.setText(getResources().getString(R.string.edit_contact));
+        addButton.setText(getResources().getString(R.string.apply_edit_contacts));
         mDatabaseHelper = new DatabaseHelper(this);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                storeContactInformation(newContactName,newContactNumber,primaryContact);
+                storeContactInformation(newContactName,newContactNumber,primaryContact
+                ,contactName,contactPhone);
             }
         });
 
     }
 
-    private void storeContactInformation(EditText newContactName, EditText newContactNumber, CheckBox primaryContact){
+
+    private void storeContactInformation(EditText newContactName, EditText newContactNumber, CheckBox primaryContact,
+                                         String oldcontactName, String oldContactPhone){
         String contactName = newContactName.getText().toString();
         String contactPhone = newContactNumber.getText().toString();
         Log.d(TAG,contactName + "," + contactPhone);
@@ -57,12 +73,10 @@ public class AddContactActivity extends AppCompatActivity {
             if (doesPrimaryContactExist() && primaryContact.isChecked()){
                 removePrimary();
             }
-            Log.e(TAG,primaryContactChecker);
-            addData(contactName,contactPhone,primaryContactChecker);
-            Intent intent = new Intent(this, MainActivity.class);
+            editData(oldcontactName,contactName,oldContactPhone,contactPhone,primaryContactChecker);
+            Intent intent = new Intent(this, ContactOverviewActivity.class);
             startActivity(intent);
         }
-
     }
 
     private boolean contactDetailsOk(String contactName, String contactPhone){
@@ -70,14 +84,8 @@ public class AddContactActivity extends AppCompatActivity {
                 && !contactName.equals(getString(R.string.contactName));
     }
 
-    public void addData(String name, String phone, String mainContact) {
-        boolean insertData = mDatabaseHelper.addData(name,phone,mainContact);
-
-        if (insertData) {
-            toastMessage("Contact added");
-        } else {
-            toastMessage("Contact already exists");
-        }
+    public void editData(String oldName, String newName, String oldPhone, String newPhone, String mainContact) {
+        mDatabaseHelper.editData(oldName,newName,oldPhone,newPhone,mainContact);
     }
 
     /**
@@ -118,6 +126,9 @@ public class AddContactActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.main_menu) {
             Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }else if(id == R.id.add_contact_menu_edit){
+            Intent intent = new Intent(this, AddContactActivity.class);
             startActivity(intent);
         }
 
