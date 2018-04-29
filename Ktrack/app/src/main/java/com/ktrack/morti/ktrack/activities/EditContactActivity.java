@@ -36,6 +36,7 @@ public class EditContactActivity extends AppCompatActivity {
         String contactPrimary = intent.getStringExtra(primaryKey);
 
         final Button addButton = findViewById(R.id.editContact);
+        final Button deleteButton = findViewById(R.id.deleteContact);
         final TextView addContactHeader = findViewById(R.id.editContactHeader);
 
         final EditText newContactName = findViewById(R.id.editName);
@@ -48,12 +49,19 @@ public class EditContactActivity extends AppCompatActivity {
         }
         addContactHeader.setText(getResources().getString(R.string.edit_contact));
         addButton.setText(getResources().getString(R.string.apply_edit_contacts));
+        deleteButton.setText(getResources().getString(R.string.apply_delete_contact));
         mDatabaseHelper = new DatabaseHelper(this);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 storeContactInformation(newContactName,newContactNumber,primaryContact
                 ,contactName,contactPhone);
+            }
+        });
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                deleteContactInformation(contactName,contactPhone);
             }
         });
 
@@ -79,13 +87,23 @@ public class EditContactActivity extends AppCompatActivity {
         }
     }
 
+    private void deleteContactInformation(String oldcontactName, String oldContactPhone){
+        deleteData(oldcontactName,oldContactPhone);
+        Intent intent = new Intent(this, ContactOverviewActivity.class);
+        startActivity(intent);
+    }
+
     private boolean contactDetailsOk(String contactName, String contactPhone){
         return (contactPhone.length()==8 || (contactPhone.startsWith("0047") && contactPhone.length()==12))
                 && !contactName.equals(getString(R.string.contactName));
     }
 
-    public void editData(String oldName, String newName, String oldPhone, String newPhone, String mainContact) {
+    private void editData(String oldName, String newName, String oldPhone, String newPhone, String mainContact) {
         mDatabaseHelper.editData(oldName,newName,oldPhone,newPhone,mainContact);
+    }
+
+    private void deleteData(String name, String phone){
+        mDatabaseHelper.deleteData(name,phone);
     }
 
     /**
@@ -133,5 +151,11 @@ public class EditContactActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, ContactOverviewActivity.class);
+        startActivity(intent);
     }
 }

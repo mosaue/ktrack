@@ -8,6 +8,7 @@
     <string name="START">START</string>
     <string name="STOP">STOP</string>
     <string name="ADD">ADD</string>
+    <string name="apply_delete_contact">DELETE</string>
     <string name="intervalNotChosen">Interval</string>
     <string name="intervalSelected">You are updating your position every %1$s minutes.</string>
     <string name="phoneNumberSelected">Tracking is sent to %1$s.</string>

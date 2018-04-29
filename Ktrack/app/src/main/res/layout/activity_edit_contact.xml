@@ -12,8 +12,5 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include
-        layout="@layout/content_edit_contact"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="25dp" />
+    <include layout="@layout/content_edit_contact" />
 </android.support.constraint.ConstraintLayout>

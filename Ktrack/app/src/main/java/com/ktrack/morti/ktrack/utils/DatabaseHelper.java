@@ -71,7 +71,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void editData(String oldName, String newName,String oldPhone, String newPhone, String mainContact) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         String query = "UPDATE " + TABLE_NAME + " SET \n"
                 + COL2 + " = '" + newName + "', \n"
                 + COL3 + " = '" + newPhone + "', \n"
@@ -79,6 +78,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + "WHERE "
                 + COL2 + " = '" + oldName + "' AND "
                 + COL3 + " = '" + oldPhone + "'";
+        db.execSQL(query);
+    }
+
+    public void deleteData(String name, String phone){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + TABLE_NAME + " \n"
+                + "WHERE "
+                + COL2 + " = '" + name + "' AND "
+                + COL3 + " = '" + phone + "'";
         db.execSQL(query);
     }
 
