@@ -99,6 +99,7 @@ public class LocationService extends Service
                     try {
                         if (counter==interval*60){
                             sendMessage(context,phoneNumber,MessageContext.normalTracking);
+                            Log.d(TAG,"Message sent \n" + MessageContext.normalTracking);
                             counter = 1;
                         }else if (startCounter == 10){
                             if (!positionFound()){
@@ -106,6 +107,7 @@ public class LocationService extends Service
                                 counter = 0;
                             }else {
                                 sendMessage(context,phoneNumber,MessageContext.trackingStart);
+                                Log.d(TAG,"Message sent \n" + MessageContext.trackingStart);
                             }
                         }
                         //TODO: get message result and handle case when it fails
@@ -114,12 +116,12 @@ public class LocationService extends Service
                         startCounter++;
                         sleep(1000);
                     }catch (Exception e){
+                        Log.e(TAG, "error," + e);
                         stopSelf();
                     }
                 }
             }
         };
-
         Thread t = new Thread(r);
         t.start();
         Log.e(TAG, "onStartCommand");
@@ -130,7 +132,7 @@ public class LocationService extends Service
     @Override
     public void onCreate()
     {
-        Log.e(TAG, "onCreate");
+        Log.i(TAG, "onCreate");
         initializeLocationManager();
         try {
             mLocationManager.requestLocationUpdates(
@@ -190,6 +192,7 @@ public class LocationService extends Service
                 LocationServiceGlobals serviceGlobals = LocationServiceGlobals.getInstance();
                 String phoneNumber = serviceGlobals.getPhoneNumber();
                 sendMessage(context,phoneNumber,MessageContext.trackingEnd);
+                Log.d(TAG,"Message sent \n" + MessageContext.trackingEnd);
                 LocationServiceGlobals locationServiceGlobals = LocationServiceGlobals.getInstance();
                 locationServiceGlobals.setLocationServiceStatus(false);
             }
@@ -210,10 +213,7 @@ public class LocationService extends Service
     }
 
     private boolean positionFound(){
-        if(mLocationListeners[0].mLastLocation.getLatitude() == 0.0 && mLocationListeners[0].mLastLocation.getLongitude() == 0.0
-                && mLocationListeners[1].mLastLocation.getLongitude() == 0.0 && mLocationListeners[1].mLastLocation.getLatitude() == 0.0){
-            return false;
-        }
-        return true;
+        return !(mLocationListeners[0].mLastLocation.getLatitude() == 0.0 && mLocationListeners[0].mLastLocation.getLongitude() == 0.0
+                && mLocationListeners[1].mLastLocation.getLongitude() == 0.0 && mLocationListeners[1].mLastLocation.getLatitude() == 0.0);
     }
 }

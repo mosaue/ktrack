@@ -18,7 +18,7 @@ import com.ktrack.morti.ktrack.R;
 import com.ktrack.morti.ktrack.utils.DatabaseHelper;
 
 public class AddContactActivity extends AppCompatActivity {
-    private static final String TAG = "AccContact";
+    private static final String TAG = "AddContact";
     DatabaseHelper mDatabaseHelper;
 
     @Override
@@ -48,7 +48,7 @@ public class AddContactActivity extends AppCompatActivity {
     private void storeContactInformation(EditText newContactName, EditText newContactNumber, CheckBox primaryContact){
         String contactName = newContactName.getText().toString();
         String contactPhone = newContactNumber.getText().toString();
-        Log.d(TAG,contactName + "," + contactPhone);
+        //Log.d(TAG,contactName + "," + contactPhone);
         String primaryContactChecker = "N";
         if (primaryContact.isChecked()){
             primaryContactChecker = "Y";
@@ -57,7 +57,7 @@ public class AddContactActivity extends AppCompatActivity {
             if (doesPrimaryContactExist() && primaryContact.isChecked()){
                 removePrimary();
             }
-            Log.e(TAG,primaryContactChecker);
+            //Log.e(TAG,primaryContactChecker);
             addData(contactName,contactPhone,primaryContactChecker);
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
